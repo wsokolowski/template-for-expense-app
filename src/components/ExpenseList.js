@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ExpenseListItem from './ExpenseListItem';
 import selectExpenses from '../selectors/expenses';
+import { Link } from 'react-router-dom';
 
 export const ExpenseList = (props) => (
     <div>
@@ -13,6 +14,9 @@ export const ExpenseList = (props) => (
                 return <ExpenseListItem key={expense.id} {...expense}/>
             })
         )}
+        <Link to="/create">
+            <button>Add expense</button>
+        </Link>
     </div>
 );
 
